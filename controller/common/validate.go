@@ -31,3 +31,12 @@ func GetIdParams(c *gin.Context) (id int, err error) {
 	}
 	return id, nil
 }
+
+func GetIsDeleteParams(c *gin.Context) (id uint16, err error) {
+	isDeleteStr := c.DefaultQuery("is_delete", "0")
+	isDelete, err := strconv.Atoi(isDeleteStr)
+	if err != nil {
+		return 0, err
+	}
+	return uint16(isDelete), nil
+}
