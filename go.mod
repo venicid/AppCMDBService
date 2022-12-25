@@ -1,4 +1,4 @@
-module gin_demo
+module AppCMDBService
 
 go 1.16
 

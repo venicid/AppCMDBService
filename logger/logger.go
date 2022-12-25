@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"gin_demo/setting"
+	"AppCMDBService/setting"
 
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"

@@ -1,24 +1,24 @@
 package main
 
 import (
+	"AppCMDBService/dao/mysql"
+	"AppCMDBService/logger"
+	"AppCMDBService/router"
+	"AppCMDBService/setting"
 	"fmt"
-	"gin_demo/dao/mysql"
-	"gin_demo/logger"
-	"gin_demo/router"
-	"gin_demo/setting"
 	"go.uber.org/zap"
 )
 
 func main() {
 
 	// 1. 加载配置viper
-	// 命令行启动: go run main.go "E:\\helloGolang\\src\\gin_demo\\config\\config.yaml"
+	// 命令行启动: go run main.go "E:\\helloGolang\\src\\AppCMDBService\\config\\config.yaml"
 	// if len(os.Args) < 2 {
 	//	panic("程序执行时必须通过命令行指定配置文件")
 	//}
 	//fmt.Println(os.Args)
 	//err := setting.InitConfig(os.Args[1])
-	err := setting.InitConfig("E:\\helloGolang\\src\\gin_demo\\config\\config.yaml")
+	err := setting.InitConfig("E:\\helloGolang\\src\\AppCMDBService\\config\\config.yaml")
 	if err != nil {
 		panic(err)
 	}

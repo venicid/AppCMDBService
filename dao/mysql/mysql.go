@@ -1,9 +1,9 @@
 package mysql
 
 import (
+	"AppCMDBService/logger"
+	"AppCMDBService/setting"
 	"fmt"
-	"gin_demo/logger"
-	"gin_demo/setting"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql" // 驱动mysql
 )

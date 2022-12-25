@@ -1,7 +1,7 @@
 name: "GIN_DEMO"
 version: "v1.0"
 mod: debug
-address: "0.0.0.0:8011"
+address: "0.0.0.0:8012"
 
 log:
   level: debug
@@ -15,7 +15,7 @@ mysql:
   port: 3306
   user: root
   password: root112358
-  dbname: books
+  dbname: t_cmdb
   max_open_conns: 100
   max_idle_conns: 20
   log_model: true
