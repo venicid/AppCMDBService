@@ -81,3 +81,83 @@
 {"level":"INFO","time":"2022-12-25T12:43:30.687+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc&search=%E7%BE%8E","ip":"127.0.0.1","errors":"","cost":73321}
 {"level":"WARN","time":"2022-12-25T12:43:47.547+0800","caller":"tree/product.go:20","msg":"[service.ListProductRecords], result: [], count:0, request: &{   1  0 美 id asc 1 10}"}
 {"level":"INFO","time":"2022-12-25T12:43:47.547+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc&is_delete=1&search=%E7%BE%8E","ip":"127.0.0.1","errors":"","cost":367419}
+{"level":"INFO","time":"2022-12-26T08:24:51.249+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:24:51.250+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:24:51.300+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-26T08:25:04.501+0800","caller":"tree/product.go:21","msg":"[service.ListProductRecords], result: [0xc00013c900 0xc00013ca20 0xc00013cb40 0xc00013cc60 0xc00013cd80], count:5, request: &{   0  0  id asc 1 10}"}
+{"level":"INFO","time":"2022-12-26T08:25:04.501+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc","ip":"127.0.0.1","errors":"","cost":43682}
+{"level":"INFO","time":"2022-12-26T08:25:17.777+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products、1","status":404,"method":"GET","path":"/api/v1/products、1","query":"","ip":"127.0.0.1","errors":"","cost":0}
+{"level":"ERROR","time":"2022-12-26T08:25:19.331+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.1"}
+{"level":"ERROR","time":"2022-12-26T08:25:19.332+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"INFO","time":"2022-12-26T08:25:19.332+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/1","status":400,"method":"GET","path":"/api/v1/products/1","query":"","ip":"127.0.0.1","errors":"","cost":608}
+{"level":"ERROR","time":"2022-12-26T08:25:20.905+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:25:20.905+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"INFO","time":"2022-12-26T08:25:20.905+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":400,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":671}
+{"level":"INFO","time":"2022-12-26T08:26:44.418+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:26:44.418+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:26:44.771+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T08:26:46.301+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:26:46.301+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"INFO","time":"2022-12-26T08:26:46.301+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":400,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":521}
+{"level":"INFO","time":"2022-12-26T08:27:35.647+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:27:35.647+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:27:35.690+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T08:27:37.746+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:27:37.746+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"INFO","time":"2022-12-26T08:27:37.746+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":400,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":1080}
+{"level":"WARN","time":"2022-12-26T08:27:55.760+0800","caller":"tree/product.go:21","msg":"[service.ListProductRecords], result: [0xc000598480 0xc0005985a0 0xc0005986c0 0xc0005987e0 0xc000598900], count:5, request: &{   0  0  id asc 1 10}"}
+{"level":"INFO","time":"2022-12-26T08:27:55.760+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc","ip":"127.0.0.1","errors":"","cost":34887}
+{"level":"ERROR","time":"2022-12-26T08:28:00.537+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:28:00.537+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"INFO","time":"2022-12-26T08:28:00.537+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":400,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":400}
+{"level":"INFO","time":"2022-12-26T08:29:27.564+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:29:27.565+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:29:27.605+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-26T08:29:29.367+0800","caller":"tree/product.go:21","msg":"[service.ListProductRecords], result: [0xc0000b8360 0xc0000b8480 0xc0000b85a0 0xc0000b86c0 0xc0000b87e0], count:5, request: &{   0  0  id asc 1 10}"}
+{"level":"INFO","time":"2022-12-26T08:29:29.367+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc","ip":"127.0.0.1","errors":"","cost":32949}
+{"level":"ERROR","time":"2022-12-26T08:29:31.744+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:29:31.745+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"INFO","time":"2022-12-26T08:29:31.745+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":400,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":581}
+{"level":"INFO","time":"2022-12-26T08:30:20.471+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:30:20.471+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:30:20.520+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-26T08:30:22.634+0800","caller":"tree/product.go:44","msg":"[service.GetProductDetail], result: &{2 腾讯 Tencent business 0 mahuateng001 2022-12-25 02:40:11 +0800 CST 2022-12-25 02:40:11 +0800 CST 0},  productId: 2"}
+{"level":"INFO","time":"2022-12-26T08:30:22.634+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":200,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":20932}
+{"level":"INFO","time":"2022-12-26T08:30:35.253+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:30:35.254+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:30:36.548+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T08:30:37.571+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:30:37.571+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"INFO","time":"2022-12-26T08:30:37.571+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":400,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":517}
+{"level":"INFO","time":"2022-12-26T08:30:59.443+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:30:59.444+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:31:11.581+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:31:11.581+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:31:11.627+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-26T08:31:13.571+0800","caller":"tree/product.go:44","msg":"[service.GetProductDetail], result: &{2 腾讯 Tencent business 0 mahuateng001 2022-12-25 02:40:11 +0800 CST 2022-12-25 02:40:11 +0800 CST 0},  productId: 2"}
+{"level":"INFO","time":"2022-12-26T08:31:13.571+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/2","status":200,"method":"GET","path":"/api/v1/products/2","query":"","ip":"127.0.0.1","errors":"","cost":21295}
+{"level":"WARN","time":"2022-12-26T08:31:15.897+0800","caller":"tree/product.go:21","msg":"[service.ListProductRecords], result: [0xc000170ab0 0xc000170bd0 0xc000170cf0 0xc000170e10 0xc000170f30], count:5, request: &{   0  0  id asc 1 10}"}
+{"level":"INFO","time":"2022-12-26T08:31:15.897+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc","ip":"127.0.0.1","errors":"","cost":32193}
+{"level":"WARN","time":"2022-12-26T08:31:19.813+0800","caller":"tree/product.go:44","msg":"[service.GetProductDetail], result: &{3 百度 Baidu business 0 liyanhong003 2022-12-25 02:40:12 +0800 CST 2022-12-25 02:40:12 +0800 CST 0},  productId: 3"}
+{"level":"INFO","time":"2022-12-26T08:31:19.813+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/3","status":200,"method":"GET","path":"/api/v1/products/3","query":"","ip":"127.0.0.1","errors":"","cost":21388}
+{"level":"WARN","time":"2022-12-26T08:31:20.827+0800","caller":"tree/product.go:44","msg":"[service.GetProductDetail], result: &{4 字节跳动 ByteDance business 0 zhangyiming004 2022-12-25 02:40:13 +0800 CST 2022-12-25 02:40:13 +0800 CST 0},  productId: 4"}
+{"level":"INFO","time":"2022-12-26T08:31:20.827+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/4","status":200,"method":"GET","path":"/api/v1/products/4","query":"","ip":"127.0.0.1","errors":"","cost":17948}
+{"level":"WARN","time":"2022-12-26T08:31:21.753+0800","caller":"tree/product.go:44","msg":"[service.GetProductDetail], result: &{5 美团 Meituan business 0 wangxing005 2022-12-25 02:40:13 +0800 CST 2022-12-25 02:40:13 +0800 CST 0},  productId: 5"}
+{"level":"INFO","time":"2022-12-26T08:31:21.753+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/5","status":200,"method":"GET","path":"/api/v1/products/5","query":"","ip":"127.0.0.1","errors":"","cost":17845}
+{"level":"WARN","time":"2022-12-26T08:31:22.820+0800","caller":"tree/product.go:44","msg":"[service.GetProductDetail], result: &{6 拼多多 Pdd business 0 huangzheng006 2022-12-25 02:41:23 +0800 CST 2022-12-25 02:41:23 +0800 CST 0},  productId: 6"}
+{"level":"INFO","time":"2022-12-26T08:31:22.820+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/6","status":200,"method":"GET","path":"/api/v1/products/6","query":"","ip":"127.0.0.1","errors":"","cost":18118}
+{"level":"ERROR","time":"2022-12-26T08:31:24.318+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
+{"level":"ERROR","time":"2022-12-26T08:31:24.319+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
+{"level":"INFO","time":"2022-12-26T08:31:24.319+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/66","status":400,"method":"GET","path":"/api/v1/products/66","query":"","ip":"127.0.0.1","errors":"","cost":23960}
+{"level":"INFO","time":"2022-12-26T08:31:53.663+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:31:53.664+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:31:53.710+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T08:31:55.803+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
+{"level":"ERROR","time":"2022-12-26T08:31:55.804+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
+{"level":"INFO","time":"2022-12-26T08:31:55.804+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/66","status":400,"method":"GET","path":"/api/v1/products/66","query":"","ip":"127.0.0.1","errors":"","cost":21704}
+{"level":"INFO","time":"2022-12-26T08:32:57.872+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:32:57.873+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:32:57.920+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
+{"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
+{"level":"INFO","time":"2022-12-26T08:32:58.930+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/66","status":400,"method":"GET","path":"/api/v1/products/66","query":"","ip":"127.0.0.1","errors":"","cost":17001}

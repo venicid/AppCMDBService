@@ -3,6 +3,7 @@ package tree
 import (
 	"AppCMDBService/dao"
 	"AppCMDBService/logger"
+	"AppCMDBService/model"
 	"AppCMDBService/view"
 	"fmt"
 )
@@ -30,4 +31,18 @@ func ListProductRecords(req *view.ProductListRequest) (*view.ProductListResponse
 	}
 
 	return response, nil
+}
+
+func GetProductDetail(productId int) (*model.Product, error) {
+
+	record, err := dao.GetProductRecord(productId)
+	if err != nil {
+		return nil, err
+	}
+
+	msg := fmt.Sprintf("[service.GetProductDetail], result: %v,  productId: %v", record, productId)
+	logger.Logger.Warn(msg)
+
+	return record, nil
+
 }

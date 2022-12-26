@@ -16,7 +16,7 @@ func InitProducts(e *gin.Engine) *gin.RouterGroup {
 	productApi := e.Group("/api/v1/products")
 
 	productApi.GET("", GetProductListHandler)
-	productApi.GET("/:id")
+	productApi.GET("/:id", GetProductDetailHandler)
 	productApi.POST("")
 	productApi.PUT("/:id")
 	productApi.DELETE("/:id")

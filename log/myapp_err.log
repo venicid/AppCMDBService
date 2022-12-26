@@ -6,3 +6,23 @@
 {"level":"ERROR","time":"2022-12-25T12:41:47.609+0800","caller":"tree/product.go:30","msg":"GetProductListHandler.error.message.Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%?%) AND (is_delete = ?) ORDER BY id asc LIMIT 10 OFFSET 0' at line 1; Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%?%) AND (is_delete = ?) LIMIT 10 OFFSET 0' at line 1"}
 {"level":"ERROR","time":"2022-12-25T12:42:14.971+0800","caller":"dao/product.go:46","msg":"【DB.LOG】 dao.product.ListProductRecords sql execute err, err message is sql: expected 1 arguments, got 2; sql: expected 1 arguments, got 2, req: &{   0  0 美 id asc 1 10}"}
 {"level":"ERROR","time":"2022-12-25T12:42:14.972+0800","caller":"tree/product.go:30","msg":"GetProductListHandler.error.message.sql: expected 1 arguments, got 2; sql: expected 1 arguments, got 2"}
+{"level":"ERROR","time":"2022-12-26T08:25:19.331+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.1"}
+{"level":"ERROR","time":"2022-12-26T08:25:19.332+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"ERROR","time":"2022-12-26T08:25:20.905+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:25:20.905+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"ERROR","time":"2022-12-26T08:26:46.301+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:26:46.301+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"ERROR","time":"2022-12-26T08:27:37.746+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:27:37.746+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"ERROR","time":"2022-12-26T08:28:00.537+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:28:00.537+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"ERROR","time":"2022-12-26T08:29:31.744+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:29:31.745+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"ERROR","time":"2022-12-26T08:30:37.571+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.unsupported destination, should be slice or struct.id.2"}
+{"level":"ERROR","time":"2022-12-26T08:30:37.571+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.unsupported destination, should be slice or struct"}
+{"level":"ERROR","time":"2022-12-26T08:31:24.318+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
+{"level":"ERROR","time":"2022-12-26T08:31:24.319+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
+{"level":"ERROR","time":"2022-12-26T08:31:55.803+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
+{"level":"ERROR","time":"2022-12-26T08:31:55.804+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
+{"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
+{"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}

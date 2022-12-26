@@ -44,6 +44,19 @@ func ListProductRecords(req *view.ProductListRequest) (error, []*model.Product, 
 	if err != nil {
 		msg := fmt.Sprintf("【DB.LOG】 dao.product.ListProductRecords sql execute err, err message is %s, req: %v", err, req)
 		logger.Logger.Error(msg)
+		return err, nil, 0
 	}
 	return err, records, count
+}
+
+func GetProductRecord(productId int) (record *model.Product, err error) {
+	record = &model.Product{}
+	tx := mysql.GORM.Where("id = ?", productId).First(&record)
+	if tx.Error != nil {
+		msg := fmt.Sprintf("【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.%s.id.%v", tx.Error, productId)
+		logger.Logger.Error(msg)
+		return nil, tx.Error
+	}
+
+	return record, nil
 }

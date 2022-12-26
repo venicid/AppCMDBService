@@ -34,3 +34,22 @@ func GetProductListHandler(c *gin.Context) {
 
 	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
 }
+
+func GetProductDetailHandler(c *gin.Context) {
+	id, err := common.GetIdParams(c)
+	if err != nil {
+		logger.Logger.Error(fmt.Sprintf("GetProductDetailHandler.error.message.%s", err.Error()))
+		c.JSON(400, gin.H{"code": 400, "msg": err.Error(), "data": nil})
+		return
+	}
+
+	result, err := tree.GetProductDetail(id)
+	if err != nil {
+		msg := fmt.Sprintf("GetProductListHandler.error.message.%s", err.Error())
+		logger.Logger.Error(msg)
+		c.JSON(400, gin.H{"code": 400, "msg": fmt.Sprintf("获取product详情错误，id:%v, err:%s", id, err.Error()), "data": nil})
+		return
+	}
+
+	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
+}
