@@ -6,6 +6,7 @@ import (
 	"AppCMDBService/model"
 	"AppCMDBService/view"
 	"fmt"
+	"time"
 )
 
 func ListProductRecords(req *view.ProductListRequest) (*view.ProductListResponse, error) {
@@ -44,5 +45,40 @@ func GetProductDetail(productId int) (*model.Product, error) {
 	logger.Logger.Warn(msg)
 
 	return record, nil
+}
 
+func GetProductByName(productName string) (*model.Product, error) {
+
+	record, err := dao.GetProductRecordByName(productName)
+	if err != nil {
+		return nil, err
+	}
+
+	msg := fmt.Sprintf("[service.GetProductByName], result: %v,  productName: %v", record, productName)
+	logger.Logger.Warn(msg)
+
+	return record, nil
+}
+
+func CreateProductRecord(params *view.ProductCreateRequest) (err error) {
+	product := &model.Product{
+		ProductName: params.ProductName,
+		Code:        params.Code,
+		ProductType: params.ProductType,
+		IsDelete:    0,
+		CreateUser:  params.CreateUser,
+		CreateTime:  time.Now(),
+		UpdateTime:  time.Now(),
+		ParentId:    *params.ParentId,
+	}
+
+	err = dao.CreateProductRecord(product)
+	if err != nil {
+		return err
+	}
+
+	msg := fmt.Sprintf("[service.CreateProductRecord],  product: %v", product)
+	logger.Logger.Warn(msg)
+
+	return nil
 }

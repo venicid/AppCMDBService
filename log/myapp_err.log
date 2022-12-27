@@ -26,3 +26,23 @@
 {"level":"ERROR","time":"2022-12-26T08:31:55.804+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
 {"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
 {"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
+{"level":"ERROR","time":"2022-12-26T08:52:31.591+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.CreateProductRecord.sql.execute.err.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1.product.&{0 拼多多 Pdd business 0 huangzheng006 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC 0}"}
+{"level":"ERROR","time":"2022-12-26T08:52:31.592+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"ERROR","time":"2022-12-26T08:52:42.521+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.CreateProductRecord.sql.execute.err.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1.product.&{0 拼多多 Pdd business 0 huangzheng006 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC 0}"}
+{"level":"ERROR","time":"2022-12-26T08:52:42.522+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"ERROR","time":"2022-12-26T09:05:33.861+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.EOF"}
+{"level":"ERROR","time":"2022-12-26T09:06:03.515+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.EOF"}
+{"level":"ERROR","time":"2022-12-26T09:07:26.333+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.EOF"}
+{"level":"ERROR","time":"2022-12-26T09:07:36.173+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.bind绑定参数失败"}
+{"level":"ERROR","time":"2022-12-26T09:32:29.481+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"ERROR","time":"2022-12-26T09:32:34.799+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"ERROR","time":"2022-12-26T09:32:39.758+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"ERROR","time":"2022-12-26T09:37:58.284+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"ERROR","time":"2022-12-26T09:38:08.535+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.ParentId不能为空"}
+{"level":"ERROR","time":"2022-12-26T09:38:14.829+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.ProductType不能为空"}
+{"level":"ERROR","time":"2022-12-26T09:38:25.430+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.ProductName不能为空"}
+{"level":"ERROR","time":"2022-12-26T09:38:29.930+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.code不能为空"}
+{"level":"ERROR","time":"2022-12-26T09:46:28.650+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}
+{"level":"ERROR","time":"2022-12-26T09:53:07.061+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}
+{"level":"ERROR","time":"2022-12-26T09:54:22.290+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}
+{"level":"ERROR","time":"2022-12-26T09:54:31.020+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}

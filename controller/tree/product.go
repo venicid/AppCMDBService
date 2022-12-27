@@ -4,7 +4,6 @@ import (
 	"AppCMDBService/controller/common"
 	"AppCMDBService/logger"
 	"AppCMDBService/service/tree"
-
 	"fmt"
 	"github.com/gin-gonic/gin"
 )
@@ -52,4 +51,35 @@ func GetProductDetailHandler(c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
+}
+
+func CreateProductHandler(c *gin.Context) {
+	params, err := getProductCreateParams(c)
+	if err != nil {
+		logger.Logger.Error(fmt.Sprintf("CreateProductHandler.error.message.%s", err.Error()))
+		c.JSON(400, gin.H{"code": 400, "msg": err.Error(), "data": nil})
+		return
+	}
+
+	// 判断已经存在
+	record, err := tree.GetProductByName(params.ProductName)
+	if err != nil {
+		logger.Logger.Error(fmt.Sprintf("CreateProductHandler.ListProductRecords.error.message.%s", err.Error()))
+		c.JSON(400, gin.H{"code": 400, "msg": fmt.Sprintf("查询product错误， err:%s", err.Error()), "data": nil})
+		return
+	}
+	if record != nil {
+		c.JSON(400, gin.H{"code": 400, "msg": fmt.Sprintf("该product已存在, productId:%v", record.Id), "data": nil})
+		return
+	}
+
+	err = tree.CreateProductRecord(params)
+	if err != nil {
+		msg := fmt.Sprintf("CreateProductHandler.error.message.%s", err.Error())
+		logger.Logger.Error(msg)
+		c.JSON(400, gin.H{"code": 400, "msg": fmt.Sprintf("创建product错误， err:%s", err.Error()), "data": nil})
+		return
+	}
+
+	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": nil})
 }

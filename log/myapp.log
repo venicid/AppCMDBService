@@ -161,3 +161,111 @@
 {"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"dao/product.go:57","msg":"【DB.LOG】 dao.product.GetProductRecord.sql.execute.err.message.record not found.id.66"}
 {"level":"ERROR","time":"2022-12-26T08:32:58.930+0800","caller":"tree/product.go:49","msg":"GetProductListHandler.error.message.record not found"}
 {"level":"INFO","time":"2022-12-26T08:32:58.930+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/66","status":400,"method":"GET","path":"/api/v1/products/66","query":"","ip":"127.0.0.1","errors":"","cost":17001}
+{"level":"WARN","time":"2022-12-26T08:37:54.466+0800","caller":"tree/product.go:44","msg":"[service.GetProductDetail], result: &{6 拼多多 Pdd business 0 huangzheng006 2022-12-25 02:41:23 +0800 CST 2022-12-25 02:41:23 +0800 CST 0},  productId: 6"}
+{"level":"INFO","time":"2022-12-26T08:37:54.466+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products/6","status":200,"method":"GET","path":"/api/v1/products/6","query":"","ip":"127.0.0.1","errors":"","cost":17855}
+{"level":"INFO","time":"2022-12-26T08:52:04.058+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:52:04.058+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:52:04.114+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T08:52:31.591+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.CreateProductRecord.sql.execute.err.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1.product.&{0 拼多多 Pdd business 0 huangzheng006 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC 0}"}
+{"level":"ERROR","time":"2022-12-26T08:52:31.592+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"INFO","time":"2022-12-26T08:52:31.592+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":252380}
+{"level":"ERROR","time":"2022-12-26T08:52:42.521+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.CreateProductRecord.sql.execute.err.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1.product.&{0 拼多多 Pdd business 0 huangzheng006 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC 0}"}
+{"level":"ERROR","time":"2022-12-26T08:52:42.522+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.Error 1292: Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"INFO","time":"2022-12-26T08:52:42.522+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":53424}
+{"level":"INFO","time":"2022-12-26T08:53:04.110+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T08:53:04.111+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T08:53:04.168+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-26T08:53:05.855+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord], result: &{0    0  0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC 0},  product: &{9 拼多多 Pdd business 0 huangzheng006 2022-12-26 08:53:05.8140207 +0800 CST m=+1.734847501 2022-12-26 08:53:05.8140207 +0800 CST m=+1.734847501 0}"}
+{"level":"INFO","time":"2022-12-26T08:53:05.856+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":43228}
+{"level":"WARN","time":"2022-12-26T08:53:31.898+0800","caller":"tree/product.go:22","msg":"[service.ListProductRecords], result: [0xc0005ae900 0xc0005aea20 0xc0005aeb40 0xc0005aec60 0xc0005aed80 0xc0005aeea0], count:6, request: &{   0  0  id asc 1 10}"}
+{"level":"INFO","time":"2022-12-26T08:53:31.898+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc","ip":"127.0.0.1","errors":"","cost":44131}
+{"level":"WARN","time":"2022-12-26T09:02:16.121+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord], result: &{0    0  0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC 0},  product: &{10  Pdd business 0 huangzheng006 2022-12-26 09:02:16.0777428 +0800 CST m=+551.998569601 2022-12-26 09:02:16.0777428 +0800 CST m=+551.998569601 0}"}
+{"level":"INFO","time":"2022-12-26T09:02:16.122+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":45181}
+{"level":"INFO","time":"2022-12-26T09:02:24.684+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:02:24.685+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:02:24.746+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-26T09:02:27.757+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{11  Pdd business 0 huangzheng006 2022-12-26 09:02:27.7124072 +0800 CST m=+3.062133301 2022-12-26 09:02:27.7124072 +0800 CST m=+3.062133301 0}"}
+{"level":"INFO","time":"2022-12-26T09:02:27.758+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":46454}
+{"level":"WARN","time":"2022-12-26T09:02:34.420+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{12    0  2022-12-26 09:02:34.3779706 +0800 CST m=+9.727696701 2022-12-26 09:02:34.3779706 +0800 CST m=+9.727696701 0}"}
+{"level":"INFO","time":"2022-12-26T09:02:34.421+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":43587}
+{"level":"WARN","time":"2022-12-26T09:02:58.145+0800","caller":"tree/product.go:22","msg":"[service.ListProductRecords], result: [0xc0005387e0 0xc000538900 0xc000538a20 0xc000538b40 0xc000538c60 0xc000538d80 0xc000538ea0 0xc000538fc0 0xc0005390e0], count:9, request: &{   0  0  id asc 1 10}"}
+{"level":"INFO","time":"2022-12-26T09:02:58.145+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=asc","ip":"127.0.0.1","errors":"","cost":51001}
+{"level":"WARN","time":"2022-12-26T09:03:06.727+0800","caller":"tree/product.go:22","msg":"[service.ListProductRecords], result: [0xc0000622d0 0xc0000623f0 0xc000062510 0xc000062630 0xc000062750 0xc000062870 0xc000062990 0xc000062ab0 0xc000062bd0], count:9, request: &{   0  0  id desc 1 10}"}
+{"level":"INFO","time":"2022-12-26T09:03:06.727+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=desc","ip":"127.0.0.1","errors":"","cost":120858}
+{"level":"ERROR","time":"2022-12-26T09:05:33.861+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.EOF"}
+{"level":"INFO","time":"2022-12-26T09:05:33.862+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":1310}
+{"level":"ERROR","time":"2022-12-26T09:06:03.515+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.EOF"}
+{"level":"INFO","time":"2022-12-26T09:06:03.516+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":973}
+{"level":"ERROR","time":"2022-12-26T09:07:26.333+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.EOF"}
+{"level":"INFO","time":"2022-12-26T09:07:26.333+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":94}
+{"level":"INFO","time":"2022-12-26T09:07:35.074+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:07:35.074+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:07:35.136+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T09:07:36.173+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.bind绑定参数失败"}
+{"level":"INFO","time":"2022-12-26T09:07:36.173+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":0}
+{"level":"WARN","time":"2022-12-26T09:07:54.880+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{13    0  2022-12-26 09:07:54.8210828 +0800 CST m=+19.782273701 2022-12-26 09:07:54.8210828 +0800 CST m=+19.782273701 0}"}
+{"level":"INFO","time":"2022-12-26T09:07:54.881+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":59946}
+{"level":"INFO","time":"2022-12-26T09:12:22.616+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:12:22.617+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:12:22.677+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-26T09:12:28.107+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{14    0  2022-12-26 09:12:28.0656155 +0800 CST m=+5.487174401 2022-12-26 09:12:28.0656155 +0800 CST m=+5.487174401 0}"}
+{"level":"INFO","time":"2022-12-26T09:12:28.107+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":42906}
+{"level":"WARN","time":"2022-12-26T09:12:30.380+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{15 拼多多 Pdd business 0 huangzheng006 2022-12-26 09:12:30.3433037 +0800 CST m=+7.764862601 2022-12-26 09:12:30.3433037 +0800 CST m=+7.764862601 0}"}
+{"level":"INFO","time":"2022-12-26T09:12:30.380+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":37564}
+{"level":"WARN","time":"2022-12-26T09:12:36.777+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{16    0  2022-12-26 09:12:36.7391791 +0800 CST m=+14.160738001 2022-12-26 09:12:36.7391791 +0800 CST m=+14.160738001 0}"}
+{"level":"INFO","time":"2022-12-26T09:12:36.777+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":38956}
+{"level":"WARN","time":"2022-12-26T09:12:48.188+0800","caller":"tree/product.go:22","msg":"[service.ListProductRecords], result: [0xc000170cf0 0xc000170e10 0xc000170f30 0xc000171050 0xc000171170 0xc000171290 0xc0001713b0 0xc0001714d0 0xc0001715f0 0xc000171710], count:13, request: &{   0  0  id desc 1 10}"}
+{"level":"INFO","time":"2022-12-26T09:12:48.188+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"GET","path":"/api/v1/products","query":"sort_field=id&sort_order=desc","ip":"127.0.0.1","errors":"","cost":72065}
+{"level":"INFO","time":"2022-12-26T09:32:20.596+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:32:20.597+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:32:20.642+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T09:32:29.481+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"INFO","time":"2022-12-26T09:32:29.482+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":516}
+{"level":"ERROR","time":"2022-12-26T09:32:34.799+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"INFO","time":"2022-12-26T09:32:34.799+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":537}
+{"level":"ERROR","time":"2022-12-26T09:32:39.758+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"INFO","time":"2022-12-26T09:32:39.758+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":450}
+{"level":"WARN","time":"2022-12-26T09:32:42.113+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{17 拼多多 Pdd business 0 huangzheng006 2022-12-26 09:32:42.0724954 +0800 CST m=+21.507707001 2022-12-26 09:32:42.0724954 +0800 CST m=+21.507707001 0}"}
+{"level":"INFO","time":"2022-12-26T09:32:42.114+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":41857}
+{"level":"ERROR","time":"2022-12-26T09:37:58.284+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.绑定参数错误，请检查"}
+{"level":"INFO","time":"2022-12-26T09:37:58.284+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":778}
+{"level":"INFO","time":"2022-12-26T09:38:06.006+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:38:06.006+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:38:06.054+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T09:38:08.535+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.ParentId不能为空"}
+{"level":"INFO","time":"2022-12-26T09:38:08.536+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":1138}
+{"level":"ERROR","time":"2022-12-26T09:38:14.829+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.ProductType不能为空"}
+{"level":"INFO","time":"2022-12-26T09:38:14.829+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":638}
+{"level":"ERROR","time":"2022-12-26T09:38:25.430+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.ProductName不能为空"}
+{"level":"INFO","time":"2022-12-26T09:38:25.430+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":214}
+{"level":"ERROR","time":"2022-12-26T09:38:29.930+0800","caller":"tree/product.go:60","msg":"CreateProductHandler.error.message.code不能为空"}
+{"level":"INFO","time":"2022-12-26T09:38:29.930+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":562}
+{"level":"WARN","time":"2022-12-26T09:38:31.694+0800","caller":"tree/product.go:68","msg":"[service.CreateProductRecord],  product: &{18 拼多多 Pdd business 0 huangzheng006 2022-12-26 09:38:31.6318405 +0800 CST m=+25.661449301 2022-12-26 09:38:31.6318405 +0800 CST m=+25.661449301 0}"}
+{"level":"INFO","time":"2022-12-26T09:38:31.694+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":200,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":62921}
+{"level":"INFO","time":"2022-12-26T09:46:18.421+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:46:18.421+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:46:18.507+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T09:46:28.650+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}
+{"level":"INFO","time":"2022-12-26T09:46:28.650+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":28872}
+{"level":"INFO","time":"2022-12-26T09:53:05.143+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:53:05.144+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:53:05.197+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T09:53:07.061+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}
+{"level":"INFO","time":"2022-12-26T09:53:07.062+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":85314}
+{"level":"ERROR","time":"2022-12-26T09:54:22.290+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}
+{"level":"INFO","time":"2022-12-26T09:54:22.290+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":40472}
+{"level":"INFO","time":"2022-12-26T09:54:29.219+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-26T09:54:29.219+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-26T09:54:29.285+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"ERROR","time":"2022-12-26T09:54:31.020+0800","caller":"tree/product.go:68","msg":"CreateProductHandler.error.message.该product已存在, productName拼多多"}
+{"level":"INFO","time":"2022-12-26T09:54:31.020+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":44789}
+{"level":"INFO","time":"2022-12-27T08:18:52.153+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-27T08:18:52.154+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-27T08:18:52.210+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-27T08:18:55.458+0800","caller":"tree/product.go:22","msg":"[service.ListProductRecords], result: [0xc0004cc510 0xc0004cc630], count:2, request: &{拼多多   0  0    0 0}"}
+{"level":"INFO","time":"2022-12-27T08:18:55.459+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":38376}
+{"level":"INFO","time":"2022-12-27T08:22:55.044+0800","caller":"logger/logger.go:54","msg":"logger init success"}
+{"level":"INFO","time":"2022-12-27T08:22:55.044+0800","caller":"AppCMDBService/main.go:34","msg":"app start"}
+{"level":"INFO","time":"2022-12-27T08:22:55.093+0800","caller":"mysql/mysql.go:47","msg":"db conn success"}
+{"level":"WARN","time":"2022-12-27T08:22:58.337+0800","caller":"tree/product.go:58","msg":"[service.GetProductByName], result: &{6 拼多多 Pdd business 0 huangzheng006 2022-12-25 02:41:23 +0800 CST 2022-12-25 02:41:23 +0800 CST 0},  productName: 拼多多"}
+{"level":"INFO","time":"2022-12-27T08:22:58.337+0800","caller":"middleware/ginLogger.go:20","msg":"/api/v1/products","status":400,"method":"POST","path":"/api/v1/products","query":"","ip":"127.0.0.1","errors":"","cost":28132}

@@ -60,3 +60,25 @@ func GetProductRecord(productId int) (record *model.Product, err error) {
 
 	return record, nil
 }
+
+func GetProductRecordByName(productName string) (record *model.Product, err error) {
+	record = &model.Product{}
+	tx := mysql.GORM.Where("product_name = ?", productName).First(&record)
+	if tx.Error != nil {
+		msg := fmt.Sprintf("【DB.LOG】 dao.product.GetProductRecordByName.sql.execute.err.message.%s.id.%v", tx.Error, productName)
+		logger.Logger.Error(msg)
+		return nil, tx.Error
+	}
+
+	return record, nil
+}
+
+func CreateProductRecord(product *model.Product) (err error) {
+	tx := mysql.GORM.Create(&product)
+	if tx.Error != nil {
+		msg := fmt.Sprintf("【DB.LOG】 dao.product.CreateProductRecord.sql.execute.err.message.%s.product.%v", tx.Error, product)
+		logger.Logger.Error(msg)
+		return tx.Error
+	}
+	return nil
+}
