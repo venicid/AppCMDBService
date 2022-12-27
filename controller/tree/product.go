@@ -150,3 +150,32 @@ func UpdateProductHandler(c *gin.Context) {
 
 	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": nil})
 }
+
+func DeleteSoftProductHandler(c *gin.Context) {
+	// id参数
+	id, err := common.GetIdParams(c)
+	if err != nil {
+		logger.Logger.Error(fmt.Sprintf("GetProductDetailHandler.error.message.%s", err.Error()))
+		common.HttpResponse(c, 400, err.Error(), nil)
+		return
+	}
+
+	// 判断是否存在
+	record, err := tree.GetProductDetail(id)
+	if err != nil || record == nil {
+		logger.Logger.Error(fmt.Sprintf("UpdateProductHandler.GetProductDetail.error.message.%s", err.Error()))
+		common.HttpResponse(c, 400, "该product不存在, 无法更新", nil)
+		return
+	}
+
+	err = tree.DeleteSoftProductRecord(record)
+	if err != nil {
+		msg := fmt.Sprintf("DeleteSoftProductHandler.error.message.%s", err.Error())
+		logger.Logger.Error(msg)
+		common.HttpResponse(c, 400, fmt.Sprintf("删除product错误， err:%s", err.Error()), nil)
+
+		return
+	}
+
+	common.HttpResponse(c, 200, "成功", nil)
+}

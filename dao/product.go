@@ -84,7 +84,25 @@ func CreateProductRecord(product *model.Product) (err error) {
 }
 
 func UpdateProductRecord(product *model.Product) (err error) {
-	tx := mysql.GORM.Model(&model.Product{}).Where("id = ?", product.Id).Updates(&product)
+	// update 不会更新非零值
+	// save会更新所有字段
+	//tx := mysql.GORM.Model(&model.Product{}).Where("id = ?", product.Id).Updates(&product)
+	// https://blog.csdn.net/s2603898260/article/details/122387028
+	tx := mysql.GORM.Save(&product)
+	if tx.Error != nil {
+		msg := fmt.Sprintf("【DB.LOG】 dao.product.UpdateProductRecord.sql.execute.err.message.%s.product.%v", tx.Error, product)
+		logger.Logger.Error(msg)
+		return tx.Error
+	}
+	return nil
+}
+
+func DeleteSoftProductRecord(product *model.Product) (err error) {
+	record := &model.Product{
+		IsDelete:   product.IsDelete,
+		UpdateTime: product.UpdateTime,
+	}
+	tx := mysql.GORM.Model(&model.Product{}).Where("id = ?", product.Id).Updates(record)
 	if tx.Error != nil {
 		msg := fmt.Sprintf("【DB.LOG】 dao.product.UpdateProductRecord.sql.execute.err.message.%s.product.%v", tx.Error, product)
 		logger.Logger.Error(msg)

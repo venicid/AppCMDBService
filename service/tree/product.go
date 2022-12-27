@@ -84,7 +84,22 @@ func CreateProductRecord(params *view.ProductCreateRequest) (err error) {
 }
 
 func UpdateProductRecord(product *model.Product) (err error) {
+	product.UpdateTime = time.Now()
 	err = dao.UpdateProductRecord(product)
+	if err != nil {
+		return err
+	}
+
+	msg := fmt.Sprintf("[service.UpdateProductRecord],  product: %v", product)
+	logger.Logger.Warn(msg)
+
+	return nil
+}
+
+func DeleteSoftProductRecord(product *model.Product) (err error) {
+	product.IsDelete = 1
+	product.UpdateTime = time.Now()
+	err = dao.DeleteSoftProductRecord(product)
 	if err != nil {
 		return err
 	}
