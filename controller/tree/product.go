@@ -83,3 +83,70 @@ func CreateProductHandler(c *gin.Context) {
 
 	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": nil})
 }
+
+func UpdateProductHandler(c *gin.Context) {
+	params, err := getProductUpdateParams(c)
+	if err != nil {
+		logger.Logger.Error(fmt.Sprintf("UpdateProductHandler.error.message.%s", err.Error()))
+		common.HttpResponse(c, 400, err.Error(), nil)
+		return
+	}
+
+	// id参数
+	id, err := common.GetIdParams(c)
+	if err != nil {
+		logger.Logger.Error(fmt.Sprintf("GetProductDetailHandler.error.message.%s", err.Error()))
+		common.HttpResponse(c, 400, err.Error(), nil)
+		return
+	}
+
+	// 判断是否存在
+	record, err := tree.GetProductDetail(id)
+	if err != nil || record == nil {
+		logger.Logger.Error(fmt.Sprintf("UpdateProductHandler.GetProductDetail.error.message.%s", err.Error()))
+		common.HttpResponse(c, 400, "该product不存在, 无法更新", nil)
+		return
+	}
+
+	// 是否需要更新
+	updateFlag := false
+	if params.ProductName != "" && params.ProductName != record.ProductName {
+		record.ProductName = params.ProductName
+		updateFlag = true
+	}
+	if params.Code != "" && params.Code != record.Code {
+		record.Code = params.Code
+		updateFlag = true
+	}
+	if params.ProductType != "" && params.ProductType != record.ProductType {
+		record.ProductType = params.ProductType
+		updateFlag = true
+	}
+	if params.CreateUser != "" && params.CreateUser != record.CreateUser {
+		record.CreateUser = params.CreateUser
+		updateFlag = true
+	}
+	if params.ParentId != nil && *params.ParentId != record.ParentId {
+		record.ParentId = *params.ParentId
+		updateFlag = true
+	}
+	if params.IsDelete != nil && *params.IsDelete != record.IsDelete {
+		record.IsDelete = *params.IsDelete
+		updateFlag = true
+	}
+
+	if !updateFlag {
+		common.HttpResponse(c, 200, "该记录未改变", nil)
+		return
+	}
+
+	err = tree.UpdateProductRecord(record)
+	if err != nil {
+		msg := fmt.Sprintf("UpdateProductHandler.error.message.%s", err.Error())
+		logger.Logger.Error(msg)
+		c.JSON(400, gin.H{"code": 400, "msg": fmt.Sprintf("更新product错误， err:%s", err.Error()), "data": nil})
+		return
+	}
+
+	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": nil})
+}

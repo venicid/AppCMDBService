@@ -82,3 +82,13 @@ func CreateProductRecord(product *model.Product) (err error) {
 	}
 	return nil
 }
+
+func UpdateProductRecord(product *model.Product) (err error) {
+	tx := mysql.GORM.Model(&model.Product{}).Where("id = ?", product.Id).Updates(&product)
+	if tx.Error != nil {
+		msg := fmt.Sprintf("【DB.LOG】 dao.product.UpdateProductRecord.sql.execute.err.message.%s.product.%v", tx.Error, product)
+		logger.Logger.Error(msg)
+		return tx.Error
+	}
+	return nil
+}

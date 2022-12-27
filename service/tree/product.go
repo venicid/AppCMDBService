@@ -82,3 +82,15 @@ func CreateProductRecord(params *view.ProductCreateRequest) (err error) {
 
 	return nil
 }
+
+func UpdateProductRecord(product *model.Product) (err error) {
+	err = dao.UpdateProductRecord(product)
+	if err != nil {
+		return err
+	}
+
+	msg := fmt.Sprintf("[service.UpdateProductRecord],  product: %v", product)
+	logger.Logger.Warn(msg)
+
+	return nil
+}

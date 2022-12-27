@@ -62,3 +62,13 @@ func getProductCreateParams(c *gin.Context) (params *view.ProductCreateRequest, 
 	return params, err
 
 }
+
+func getProductUpdateParams(c *gin.Context) (params *view.ProductUpdateRequest, err error) {
+	params = &view.ProductUpdateRequest{}
+	err = c.ShouldBindJSON(params)
+	if err != nil {
+		return nil, errors.New("bind绑定参数失败")
+	}
+	return params, err
+
+}

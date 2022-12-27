@@ -34,3 +34,13 @@ type ProductCreateRequest struct {
 	// int 与 *int 的区别， *int可以判断 == nil
 	ParentId *int `json:"parent_id"` // 父节点ID，t_product.id
 }
+
+type ProductUpdateRequest struct {
+	ProductName string `json:"product_name"` // 名称
+	Code        string `json:"code"`         // 代码
+	ProductType string `json:"product_type"` // 类型
+	CreateUser  string `json:"create_user"`  // 创建人
+	// int 与 *int 的区别， *int可以判断 == nil
+	ParentId *int `json:"parent_id"` // 父节点ID，t_product.id
+	IsDelete *int `json:"is_delete"` // 是否删除
+}
