@@ -34,6 +34,18 @@ func ListProductRecords(req *view.ProductListRequest) (*view.ProductListResponse
 	return response, nil
 }
 
+func ListMiniProductRecords() ([]*model.ProductMini, error) {
+	err, result := dao.ListMiniProductRecords()
+	if err != nil {
+		return nil, err
+	}
+
+	msg := fmt.Sprintf("[service.ListMiniProductRecords], result: %v, count:%d, ", result, len(result))
+	logger.Logger.Warn(msg)
+
+	return result, nil
+}
+
 func GetProductDetail(productId int) (*model.Product, error) {
 
 	record, err := dao.GetProductRecord(productId)

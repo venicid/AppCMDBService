@@ -6,16 +6,30 @@ import (
 
 func Init(e *gin.Engine) []*gin.RouterGroup {
 	data := make([]*gin.RouterGroup, 0)
+	data = append(data, InitTree(e))
 	data = append(data, InitProducts(e))
 	data = append(data, InitApps(e))
 	data = append(data, InitGroups(e))
 	return data
 }
 
+func InitTree(e *gin.Engine) *gin.RouterGroup {
+	treeApi := e.Group("/api/v1/tree")
+
+	treeApi.GET("/global", GetTreeGlobalHandler)
+	treeApi.GET("/:id")
+	treeApi.POST("")
+	treeApi.PUT("/:id")
+	treeApi.DELETE("/:id")
+
+	return treeApi
+}
+
 func InitProducts(e *gin.Engine) *gin.RouterGroup {
 	productApi := e.Group("/api/v1/products")
 
 	productApi.GET("", GetProductListHandler)
+	productApi.GET("/mini", GetMiniProductRecords)
 	productApi.GET("/:id", GetProductDetailHandler)
 	productApi.POST("", CreateProductHandler)
 	productApi.PUT("/:id", UpdateProductHandler)

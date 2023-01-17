@@ -1,1 +1,15 @@
 {"level":"ERROR","time":"2022-12-27T08:52:33.708+0800","caller":"middleware/ginRecovery.go:52","msg":"[Recovery from panic]","error":"runtime error: invalid memory address or nil pointer dereference","request":"PUT /api/v1/products/9 HTTP/1.1\r\nHost: 0.0.0.0:8012\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: keep-alive\r\nContent-Length: 106\r\nContent-Type: application/json\r\nPostman-Token: ea4407b6-6662-4fb5-bc15-a0d745b8aac4\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n"}
+{"level":"ERROR","time":"2022-12-30T22:30:19.122+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.GetProductRecordByName.sql.execute.err.message.record not found.id.社交网络事业群"}
+{"level":"ERROR","time":"2022-12-30T22:30:19.123+0800","caller":"tree/product.go:67","msg":"CreateProductHandler.ListProductRecords.error.message.record not found"}
+{"level":"ERROR","time":"2022-12-30T22:34:00.815+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.GetProductRecordByName.sql.execute.err.message.record not found.id.社交网络事业群"}
+{"level":"ERROR","time":"2022-12-30T22:34:00.816+0800","caller":"tree/product.go:67","msg":"CreateProductHandler.ListProductRecords.error.message.record not found"}
+{"level":"ERROR","time":"2022-12-30T22:36:16.438+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.GetProductRecordByName.sql.execute.err.message.record not found.id.社交网络事业群"}
+{"level":"ERROR","time":"2022-12-30T22:36:16.440+0800","caller":"tree/product.go:67","msg":"CreateProductHandler.ListProductRecords.error.message.record not found"}
+{"level":"ERROR","time":"2022-12-30T22:40:16.317+0800","caller":"dao/product.go:69","msg":"【DB.LOG】 dao.product.GetProductRecordByName.sql.execute.err.message.record not found.id.社交网络事业群"}
+{"level":"ERROR","time":"2023-01-03T08:59:05.429+0800","caller":"tree/product.go:52","msg":"GetProductDetailHandler.error.message.strconv.Atoi: parsing \"min\": invalid syntax"}
+{"level":"ERROR","time":"2023-01-03T09:03:32.069+0800","caller":"dao/product.go:58","msg":"【DB.LOG】 dao.product.ListMiniProductRecords sql execute err, err message is Error 1103: Incorrect table name '', req: %!v(MISSING)"}
+{"level":"ERROR","time":"2023-01-03T09:03:32.069+0800","caller":"tree/product.go:42","msg":"GetMiniProductRecords.error.message.Error 1103: Incorrect table name ''"}
+{"level":"ERROR","time":"2023-01-03T09:04:43.058+0800","caller":"dao/product.go:58","msg":"【DB.LOG】 dao.product.ListMiniProductRecords sql execute err, err message is Error 1103: Incorrect table name '', req: %!v(MISSING)"}
+{"level":"ERROR","time":"2023-01-03T09:04:43.059+0800","caller":"tree/product.go:42","msg":"GetMiniProductRecords.error.message.Error 1103: Incorrect table name ''"}
+{"level":"ERROR","time":"2023-01-03T09:09:38.913+0800","caller":"dao/product.go:64","msg":"【DB.LOG】 dao.product.ListMiniProductRecords sql execute err, err message is Error 1103: Incorrect table name '', req: %!v(MISSING)"}
+{"level":"ERROR","time":"2023-01-03T09:09:38.914+0800","caller":"tree/product.go:42","msg":"GetMiniProductRecords.error.message.Error 1103: Incorrect table name ''"}

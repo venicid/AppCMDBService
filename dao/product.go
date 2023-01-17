@@ -49,6 +49,20 @@ func ListProductRecords(req *view.ProductListRequest) (error, []*model.Product, 
 	return err, records, count
 }
 
+func ListMiniProductRecords() (error, []*model.ProductMini) {
+	var records []*model.ProductMini
+
+	//err := mysql.GORM.Raw("select id, product_name, code, product_type, parent_id from t_product").Scan(&records).Error
+	err := mysql.GORM.Model(model.Product{}).Select([]string{"id", "product_name",
+		"code", "product_type", "parent_id"}).Scan(&records).Error
+	if err != nil {
+		msg := fmt.Sprintf("【DB.LOG】 dao.product.ListMiniProductRecords sql execute err, err message is %s, req: %v", err)
+		logger.Logger.Error(msg)
+		return err, nil
+	}
+	return err, records
+}
+
 func GetProductRecord(productId int) (record *model.Product, err error) {
 	record = &model.Product{}
 	tx := mysql.GORM.Where("id = ?", productId).First(&record)

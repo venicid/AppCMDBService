@@ -34,6 +34,18 @@ func GetProductListHandler(c *gin.Context) {
 	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
 }
 
+func GetMiniProductRecords(c *gin.Context) {
+
+	result, err := tree.ListMiniProductRecords()
+	if err != nil {
+		msg := fmt.Sprintf("GetMiniProductRecords.error.message.%s", err.Error())
+		logger.Logger.Error(msg)
+		c.JSON(400, gin.H{"code": 400, "msg": "获取mini-product列表错误", "data": nil})
+		return
+	}
+
+	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
+}
 func GetProductDetailHandler(c *gin.Context) {
 	id, err := common.GetIdParams(c)
 	if err != nil {
@@ -63,7 +75,7 @@ func CreateProductHandler(c *gin.Context) {
 
 	// 判断已经存在
 	record, err := tree.GetProductByName(params.ProductName)
-	if err != nil {
+	if err != nil && record != nil {
 		logger.Logger.Error(fmt.Sprintf("CreateProductHandler.ListProductRecords.error.message.%s", err.Error()))
 		c.JSON(400, gin.H{"code": 400, "msg": fmt.Sprintf("查询product错误， err:%s", err.Error()), "data": nil})
 		return
