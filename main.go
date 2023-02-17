@@ -18,7 +18,7 @@ func main() {
 	//}
 	//fmt.Println(os.Args)
 	//err := setting.InitConfig(os.Args[1])
-	err := setting.InitConfig("E:\\helloGolang\\src\\AppCMDBService\\config\\config.yaml")
+	err := setting.InitConfig("E:\\050 - Golang丨go\\src\\AppCMDBService\\config\\config.yaml")
 	if err != nil {
 		panic(err)
 	}
