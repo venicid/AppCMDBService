@@ -17,11 +17,11 @@ type Product struct {
 }
 
 type ProductMini struct {
-	Id          int    `gorm:"column:id;primary_key" json:"id"`                  // 主键
+	Id          *int   `gorm:"column:id;primary_key" json:"id"`                  // 主键
 	ProductName string `gorm:"column:product_name;NOT NULL" json:"product_name"` // 名称
 	Code        string `gorm:"column:code;NOT NULL" json:"code"`                 // 代码
 	ProductType string `gorm:"column:product_type;NOT NULL" json:"product_type"` // 类型
-	ParentId    int    `gorm:"column:parent_id" json:"parent_id"`                // 父节点ID，t_product.id
+	ParentId    *int   `gorm:"column:parent_id" json:"parent_id"`                // 父节点ID，t_product.id
 }
 
 func (m *Product) TableName() string {

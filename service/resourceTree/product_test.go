@@ -1,4 +1,4 @@
-package tree
+package resourceTree
 
 import (
 	"AppCMDBService/dao/mysql"
@@ -11,7 +11,7 @@ import (
 )
 
 func InitTools() {
-	setting.InitConfig("E:\\helloGolang\\src\\AppCMDBService\\config\\config.yaml")
+	setting.InitConfig("E:\\050 - Golang丨go\\src\\AppCMDBService\\config\\config.yaml")
 	logger.Init()
 	defer zap.L().Sync()
 	mysql.Init()

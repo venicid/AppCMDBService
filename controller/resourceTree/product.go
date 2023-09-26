@@ -1,12 +1,25 @@
-package tree
+package resourceTree
 
 import (
 	"AppCMDBService/controller/common"
 	"AppCMDBService/logger"
-	"AppCMDBService/service/tree"
+	"AppCMDBService/service/resourceTree"
 	"fmt"
 	"github.com/gin-gonic/gin"
 )
+
+func InitProducts(e *gin.Engine) *gin.RouterGroup {
+	productApi := e.Group("/api/v1/products")
+
+	productApi.GET("", GetProductListHandler)
+	productApi.GET("/:id", GetProductDetailHandler)
+	productApi.POST("", CreateProductHandler)
+	productApi.PUT("/:id", UpdateProductHandler)
+	productApi.DELETE("/:id", DeleteSoftProductHandler)
+	productApi.GET("/mini", GetMiniProductRecords)
+
+	return productApi
+}
 
 /**
 1. 参数处理
@@ -23,7 +36,7 @@ func GetProductListHandler(c *gin.Context) {
 		common.HttpResponse(c, 400, "参数解析错误", nil)
 	}
 
-	result, err := tree.ListProductRecords(params)
+	result, err := resourceTree.ListProductRecords(params)
 	if err != nil {
 		msg := fmt.Sprintf("GetProductListHandler.error.message.%s", err.Error())
 		logger.Logger.Error(msg)
@@ -34,18 +47,6 @@ func GetProductListHandler(c *gin.Context) {
 	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
 }
 
-func GetMiniProductRecords(c *gin.Context) {
-
-	result, err := tree.ListMiniProductRecords()
-	if err != nil {
-		msg := fmt.Sprintf("GetMiniProductRecords.error.message.%s", err.Error())
-		logger.Logger.Error(msg)
-		c.JSON(400, gin.H{"code": 400, "msg": "获取mini-product列表错误", "data": nil})
-		return
-	}
-
-	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
-}
 func GetProductDetailHandler(c *gin.Context) {
 	id, err := common.GetIdParams(c)
 	if err != nil {
@@ -54,7 +55,7 @@ func GetProductDetailHandler(c *gin.Context) {
 		return
 	}
 
-	result, err := tree.GetProductDetail(id)
+	result, err := resourceTree.GetProductDetail(id)
 	if err != nil {
 		msg := fmt.Sprintf("GetProductListHandler.error.message.%s", err.Error())
 		logger.Logger.Error(msg)
@@ -74,7 +75,7 @@ func CreateProductHandler(c *gin.Context) {
 	}
 
 	// 判断已经存在
-	record, err := tree.GetProductByName(params.ProductName)
+	record, err := resourceTree.GetProductByName(params.ProductName)
 	if err != nil && record != nil {
 		logger.Logger.Error(fmt.Sprintf("CreateProductHandler.ListProductRecords.error.message.%s", err.Error()))
 		c.JSON(400, gin.H{"code": 400, "msg": fmt.Sprintf("查询product错误， err:%s", err.Error()), "data": nil})
@@ -85,7 +86,7 @@ func CreateProductHandler(c *gin.Context) {
 		return
 	}
 
-	err = tree.CreateProductRecord(params)
+	err = resourceTree.CreateProductRecord(params)
 	if err != nil {
 		msg := fmt.Sprintf("CreateProductHandler.error.message.%s", err.Error())
 		logger.Logger.Error(msg)
@@ -113,7 +114,7 @@ func UpdateProductHandler(c *gin.Context) {
 	}
 
 	// 判断是否存在
-	record, err := tree.GetProductDetail(id)
+	record, err := resourceTree.GetProductDetail(id)
 	if err != nil || record == nil {
 		logger.Logger.Error(fmt.Sprintf("UpdateProductHandler.GetProductDetail.error.message.%s", err.Error()))
 		common.HttpResponse(c, 400, "该product不存在, 无法更新", nil)
@@ -152,7 +153,7 @@ func UpdateProductHandler(c *gin.Context) {
 		return
 	}
 
-	err = tree.UpdateProductRecord(record)
+	err = resourceTree.UpdateProductRecord(record)
 	if err != nil {
 		msg := fmt.Sprintf("UpdateProductHandler.error.message.%s", err.Error())
 		logger.Logger.Error(msg)
@@ -173,14 +174,14 @@ func DeleteSoftProductHandler(c *gin.Context) {
 	}
 
 	// 判断是否存在
-	record, err := tree.GetProductDetail(id)
+	record, err := resourceTree.GetProductDetail(id)
 	if err != nil || record == nil {
 		logger.Logger.Error(fmt.Sprintf("UpdateProductHandler.GetProductDetail.error.message.%s", err.Error()))
 		common.HttpResponse(c, 400, "该product不存在, 无法更新", nil)
 		return
 	}
 
-	err = tree.DeleteSoftProductRecord(record)
+	err = resourceTree.DeleteSoftProductRecord(record)
 	if err != nil {
 		msg := fmt.Sprintf("DeleteSoftProductHandler.error.message.%s", err.Error())
 		logger.Logger.Error(msg)
@@ -190,4 +191,17 @@ func DeleteSoftProductHandler(c *gin.Context) {
 	}
 
 	common.HttpResponse(c, 200, "成功", nil)
+}
+
+func GetMiniProductRecords(c *gin.Context) {
+
+	result, err := resourceTree.ListMiniProductRecords()
+	if err != nil {
+		msg := fmt.Sprintf("GetMiniProductRecords.error.message.%s", err.Error())
+		logger.Logger.Error(msg)
+		c.JSON(400, gin.H{"code": 400, "msg": "获取mini-product列表错误", "data": nil})
+		return
+	}
+
+	c.JSON(200, gin.H{"code": 200, "msg": "成功", "data": result})
 }

@@ -2,7 +2,7 @@ package router
 
 import (
 	"AppCMDBService/controller"
-	"AppCMDBService/controller/tree"
+	"AppCMDBService/controller/resourceTree"
 	"AppCMDBService/middleware"
 	"go.uber.org/zap"
 
@@ -25,7 +25,7 @@ func Setup() *gin.Engine {
 	r.GET("/ping", controller.PingHandler)
 
 	// 路由拆分为不同模块
-	tree.Init(r)
+	resourceTree.Init(r)
 
 	return r
 }

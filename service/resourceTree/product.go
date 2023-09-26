@@ -1,4 +1,4 @@
-package tree
+package resourceTree
 
 import (
 	"AppCMDBService/dao"
@@ -34,6 +34,7 @@ func ListProductRecords(req *view.ProductListRequest) (*view.ProductListResponse
 	return response, nil
 }
 
+// ListMiniProductRecords mini产品列表
 func ListMiniProductRecords() ([]*model.ProductMini, error) {
 	err, result := dao.ListMiniProductRecords()
 	if err != nil {
